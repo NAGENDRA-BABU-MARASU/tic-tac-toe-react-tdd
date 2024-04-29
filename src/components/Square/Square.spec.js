@@ -21,10 +21,11 @@ describe('<Square />', () => {
   }
 
   it('calls the click handler', async () => {
+    const expectedCalledTimes = 1;
 
     await clicksTheSquare();
 
-    expect(clickHandler).toHaveBeenCalledTimes(1);
+    expect(clickHandler).toHaveBeenCalledTimes(expectedCalledTimes);
   });
 
 })
