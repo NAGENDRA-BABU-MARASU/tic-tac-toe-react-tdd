@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("playing the game correctly", () => {
   it('should alternate between O and X while clicking the buttons', () => {
     cy.visit('http://localhost:3000');

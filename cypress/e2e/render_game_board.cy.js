@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('rendering the game board', () => {
   it('renders the board with 9 squares', () => {
     cy.visit('http://localhost:3000');

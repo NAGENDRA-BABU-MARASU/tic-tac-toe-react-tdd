@@ -8,19 +8,16 @@ describe('<Square />', () => {
   it('displays the correct value recieved from props', async () => {
     const expectedValue = "X";
 
-    const { container } = render(<Square value="X" />);
+    render(<Square dataTestId={`square0`} value="X" />);
 
-    const mySquare = container.getElementsByClassName('square')[0];
-
-    expect(mySquare.textContent).toEqual(expectedValue);
+    expect(screen.getByTestId('square0').textContent).toEqual(expectedValue);
   });
 
   async function clicksTheSquare() {
     clickHandler = jest.fn().mockName('handleClick');
-    const { container } = render(<Square onSquareClick={clickHandler} />);
+    render(<Square dataTestId={`square0`} onSquareClick={clickHandler} />);
 
-    const mySquare = container.getElementsByClassName('square')[0];
-    userEvent.click(mySquare);
+    userEvent.click(screen.getByTestId('square0'));
   }
 
   it('calls the click handler', async () => {
