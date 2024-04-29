@@ -14,4 +14,20 @@ describe("playing the game correctly", () => {
 
     cy.get('[data-testid="square2"]').should('have.text', 'X');
   });
+
+  it('should declare and display the winner correctly', () => {
+    cy.visit('http://localhost:3000');
+
+    cy.get('[data-testid="square0"]').click();
+
+    cy.get('[data-testid="square3"]').click();
+
+    cy.get('[data-testid="square1"]').click();
+
+    cy.get('[data-testid="square4"]').click();
+
+    cy.get('[data-testid="square2"]').click();
+
+    cy.contains('Winner: X');
+  })
 })
