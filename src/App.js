@@ -1,3 +1,6 @@
-export default function App(){
-  return <h1>Hello world</h1>
+import Board from "./components/Board/Board";
+
+
+export default function App() {
+  return <Board />;
 }
